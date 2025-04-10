@@ -3,6 +3,7 @@ from agrofit import AgroFit
 from yield_predictor import YieldPredictor
 import warnings
 
+
 def main():
     warnings.filterwarnings("ignore", message=".*libiomp.*libomp.*")
     data_path = "C:/Users/Atharva/Desktop/Agrofit/enlarged_agriculture_dataset.csv"
@@ -26,6 +27,7 @@ def main():
     print("[4] Exit")
     print("Type '99' to see the options again.\n")
 
+    
     while True:
         choice = input("Choose an option: ").strip()
 
@@ -126,6 +128,7 @@ def main():
 
         else:
             print("Invalid option. Please try again.")
+
 
 if __name__ == "__main__":
     main()
