@@ -1,1 +1,1 @@
-# FarmAssist
+# FarmAssistAI
