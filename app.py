@@ -5,6 +5,7 @@ import warnings
 
 warnings.filterwarnings("ignore", message=".*libiomp.*libomp.*")
 
+
 # Load models
 data_path = "enlarged_agriculture_dataset.csv"
 agrofit = AgroFit(data_path=data_path, model_path="agrofit_model.pkl")
