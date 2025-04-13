@@ -143,13 +143,13 @@ st.markdown("<div class='overlay'>", unsafe_allow_html=True)
 # AgroFit Subtype
 if st.session_state.page == 'agrofit':
     st.subheader("🧬 Crop Subtype Recommendation")
-    N = st.slider("Nitrogen (ppm)", 0, 200, 40)
-    P = st.slider("Phosphorus (ppm)", 0, 200, 30)
-    K = st.slider("Potassium (ppm)", 0, 200, 50)
-    temp = st.slider("Temperature (°C)", 0, 50, 25)
-    humidity = st.slider("Humidity (%)", 0, 100, 60)
-    pH = st.slider("pH Level", 0.0, 14.0, 6.5)
-    rainfall = st.slider("Rainfall (mm)", 0, 1000, 300)
+    N = st.slider("Nitrogen (ppm)", 10, 200, 40)
+    P = st.slider("Phosphorus (ppm)", 10, 200, 30)
+    K = st.slider("Potassium (ppm)", 10, 200, 50)
+    temp = st.slider("Temperature (°C)", 5, 50, 25)
+    humidity = st.slider("Humidity (%)", 10, 100, 60)
+    pH = st.slider("pH Level", 2.0, 14.0, 6.5)
+    rainfall = st.slider("Rainfall (mm)", 50, 1000, 300)
 
     if st.button("🌱 Get Subtype Recommendation", key="get_subtype"):
         result = agrofit.recommend_subtype([N, P, K, temp, humidity, pH, rainfall])
@@ -180,16 +180,16 @@ elif st.session_state.page == 'yield':
         user_input[cat_feat] = st.selectbox(f"{cat_feat}", options[cat_feat], key=f"cat_{cat_feat}")
 
     numeric_features = {
-        'Nitrogen Content (ppm)': (20, 300, 40),
-        'Phosphorus Content (ppm)': (0, 200, 20),
-        'Potassium Content (ppm)': (0, 200, 30),
-        'Temperature (°C)': (0, 50, 25),
-        'Humidity (%)': (0, 100, 60),
-        'Rainfall (mm)': (0, 1000, 300),
-        'pH Level': (0.0, 14.0, 6.5),
-        'Altitude (m)': (0, 3000, 200),
-        'Sunlight Hours (per day)': (0, 24, 6),
-        'Growing Period (days)': (0, 300, 90),
+        'Nitrogen Content (ppm)': (10, 300, 40),
+        'Phosphorus Content (ppm)': (20, 200, 20),
+        'Potassium Content (ppm)': (10, 200, 30),
+        'Temperature (°C)': (5, 50, 25),
+        'Humidity (%)': (10, 100, 60),
+        'Rainfall (mm)': (50, 1000, 300),
+        'pH Level': (2.0, 14.0, 6.5),
+        'Altitude (m)': (200, 3000, 200),
+        'Sunlight Hours (per day)': (2, 24, 6),
+        'Growing Period (days)': (10, 300, 90),
         'Area (ha)': (0, 500, 1)
     }
 
